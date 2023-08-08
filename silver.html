@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Spline — Coming Soon Page Template</title>
+	<!-- Modernizr -->
+	<script src="js/modernizr.js"></script>
+	<!-- Open Sans from Google Webfonts -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+	<!-- Main styles file -->
+	<link rel="stylesheet" href="css/styles.css" />
+	<!-- Icons via Font Awesome -->
+	<link rel="stylesheet" href="css/font-awesome.min.css" />
+</head>
+<body class="color-scheme-silver">
+	<!-- Animated background -->
+	<canvas id="bg-canvas"></canvas>
+	
+	<!-- First screen -->
+	<div class="splash">
+		<div class="centered-unit">
+			<div class="container">
+				<!-- Main header -->
+				<h1>Change Rebellion</h1>
+				<!-- Sub header -->
+				<p class="lead">Dealing with some really complicated stuff here.</p>
+				
+				<!-- Countdown -->
+				<div class="countdown circled large">
+					<!-- Days -->
+					<div class="time days">
+						<div class="value">00</div>
+						<div class="unit">Days</div>
+					</div>
+					<!-- Hours -->
+					<div class="time hours">
+						<div class="value">00</div>
+						<div class="unit">Hours</div>
+					</div>
+					<!-- Minutes -->
+					<div class="time minutes">
+						<div class="value">00</div>
+						<div class="unit">Minutes</div>
+					</div>
+					<!-- Seconds -->
+					<div class="time seconds">
+						<div class="value">00</div>
+						<div class="unit">Seconds</div>
+					</div>
+				</div>
+				<!-- Countdown end -->
+			</div>	
+		</div>
+	</div>
+	
+	
+		<!-- Footer -->
+		<div class="footer">
+			<div class="container">
+				&copy; 2023 Change Rebellion. All rights reserved.
+			</div>
+		</div>
+		<!-- Footer end -->
+
+	
+	
+	<!-- JavaScripts -->
+	<script src="js/jquery.js"></script>
+	<script src="js/countdown.js"></script>
+	<script src="js/bezierCanvas.js"></script>
+	<script src="js/notifyMe.js"></script>
+	
+	<script type="text/javascript">
+	$().ready(function(){
+	
+		// Activate countdownTimer plugin on a '.countdown' element
+		$(".countdown").countdownTimer({
+			// Set the end date for the countdown
+			endTime: new Date("April 21, 2014 11:13:00 UTC+0200")
+		});
+		
+		
+		// Activate notifyMe plugin on a '#notifyMe' element	
+		$("#notifyMe").notifyMe();
+		
+		
+		// Activate bezierCanvas plugin on a #bg-canvas element
+		$("#bg-canvas").bezierCanvas({
+			maxStyles: 1,
+			maxLines: 100,
+			lineSpacing: 1,
+			colorBase: {r: 255,g: 255,b: 255},
+			colorVariation: {r: 0, g: 0, b: 0},
+			moveCenterX: 0,
+			moveCenterY: 0,
+			speedVariation: 0.3,
+			globalAlpha: 1,
+			globalSpeed: 300,
+		});
+		
+		
+		// Add handler on 'Scroll down to learn more' link
+		$().ready(function(){
+			$(".overlap .more").click(function(e){
+				e.preventDefault();
+				$("body,html").animate({scrollTop: $(window).height()});
+			});
+		});		
+		
+	});
+	</script>
+
+</body>
+</html>
